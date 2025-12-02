@@ -6,7 +6,7 @@ img {
   max-width: 100%;
 }
 .hero {
-  background-color: #eee;
+  background-color: var(--color-foreground);
   height: 90vh;
   width: 100%;
   display: flex;
@@ -17,14 +17,24 @@ img {
   font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: 2.5px;
+  color: var(--color-text-primary);
 }
 .hero_text p {
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 2.5px;
+  color: var(--color-text-secondary);
 }
 .hero_image img {
   height: 70vh;
+}
+@media screen and (max-width: 650px) {
+  .hero_image img {
+    display: none;
+  }
+  .hero {
+    justify-content: center;
+  }
 }
 
 .statistics {
@@ -33,8 +43,14 @@ img {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 650px) {
+  .statistics {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .statistics .box {
-  background-color: #eee;
+  background-color: var(--color-foreground);
   width: 100%;
   height: 15rem;
   display: flex;
@@ -42,9 +58,13 @@ img {
   justify-content: center;
   align-items: center;
 }
+.statistics .box h2 {
+  color: var(--color-text-primary);
+}
 .statistics .box p {
   font-size: 6rem;
   font-weight: bold;
+  color: var(--color-text-secondary);
 }
 .elo {
   margin-right: 1rem;
@@ -53,7 +73,7 @@ img {
   margin-left: 1rem;
 }
 .latest_posts_wrapper {
-  background-color: #eee;
+  background-color: var(--color-foreground);
   padding-top: 2rem;
   padding-bottom: 4rem;
   padding-left: 1rem;
@@ -62,7 +82,7 @@ img {
 }
 .latest_posts_wrapper h2 {
   text-align: center;
-  
+  color: var(--color-text-primary);
   padding-bottom: 3rem;
 
   font-size: 2rem;
@@ -96,6 +116,53 @@ img {
   display: block;
   height: 100%;
 }
-.post h3, .post h4 {
+.post h3,
+.post h4 {
   color: #333;
+}
+
+footer {
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  background-color: #b58863;
+}
+footer .footer_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  height: 20rem;
+}
+footer p,
+a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+footer .footer_image {
+  display: flex;
+  justify-content: end;
+}
+footer .footer_image img {
+  height: 100%;
+}
+footer .copyright {
+  text-align: center;
+  color: #f0d9b5;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+@media screen and (max-width: 550px) {
+  footer .footer_image img {
+    display: none;
+  }
+  footer .footer_wrapper {
+    justify-content: start;
+  }
 }
