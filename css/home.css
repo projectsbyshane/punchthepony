@@ -72,6 +72,59 @@ img {
 .games {
   margin-left: 1rem;
 }
+
+.featured_games_wrapper {
+  background-color: var(--color-foreground);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.featured_games_wrapper h2 {
+  text-align: center;
+  color: var(--color-text-primary);
+  padding-bottom: 3rem;
+  font-size: 2rem;
+}
+.featured_games {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-evenly;
+}
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  align-items: center;
+}
+.featured a {
+  display: block;
+  max-height: 350px;
+  max-width: 350px;
+}
+.featured a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 0px 20px black;
+}
+.featured a img:hover {
+  transform: scale(1.03);
+}
+.text_under{
+  width: 300px;
+  text-align: center;
+}
+.featured h3,
+.featured h4 {
+  color: var(--color-text-secondary);
+}
+
 .latest_posts_wrapper {
   background-color: var(--color-foreground);
   padding-top: 2rem;
@@ -79,12 +132,12 @@ img {
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
+  margin-bottom: 2rem;
 }
 .latest_posts_wrapper h2 {
   text-align: center;
   color: var(--color-text-primary);
   padding-bottom: 3rem;
-
   font-size: 2rem;
 }
 .latest_posts {
@@ -104,13 +157,13 @@ img {
   flex-shrink: 1;
   flex-basis: 400px;
   max-width: 650px;
-  box-shadow: 1px 1px 15px black;
+  box-shadow: 0px 0px 10px black;
   overflow: hidden;
   border-radius: 10px;
 }
 .post:hover {
-  scale: 99%;
-  box-shadow: 1px 1px 5px black;
+  scale: 102%;
+  
 }
 .post img {
   display: block;
