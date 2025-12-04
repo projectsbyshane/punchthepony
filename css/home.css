@@ -116,7 +116,7 @@ img {
 .featured a img:hover {
   transform: scale(1.03);
 }
-.text_under{
+.text_under {
   width: 300px;
   text-align: center;
 }
@@ -142,36 +142,64 @@ img {
 }
 .latest_posts {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
   justify-content: center;
 }
-
 .post {
   display: flex;
-  height: 6rem;
-  gap: 2rem;
+  gap: 1rem;
   padding-right: 2rem;
   align-items: center;
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 400px;
-  max-width: 650px;
+  flex-basis: 500px;
+  max-width: 600px;
   box-shadow: 0px 0px 10px black;
-  overflow: hidden;
-  border-radius: 10px;
 }
-.post:hover {
-  scale: 102%;
-  
-}
-.post img {
-  display: block;
+.post .win,
+.post .loss,
+.post .draw {
+  width: 4rem;
   height: 100%;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+.post .win {
+  background-image: url("/assets/svg/win.svg");
+  background-color: green;
+}
+.post .draw {
+  background-image: url("/assets/svg/draw.svg");
+  background-color: orange;
+}
+.post .loss {
+  background-image: url("/assets/svg/loss.svg");
+  background-color: red;
+}
+.post:hover{
+  background-color: var(--color-background);
+}
+.post:hover > h4 {
+  color: var(--color-text-secondary);
+}
+.post:hover > h3 {
+  color: var(--color-text-secondary);
+}
+
 .post h3,
 .post h4 {
   color: #333;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 650px) {
+  .post h4 {
+    display: none;
+  }
 }
 
 footer {
