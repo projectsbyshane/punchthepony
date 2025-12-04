@@ -120,9 +120,11 @@ img {
   width: 300px;
   text-align: center;
 }
-.featured h3,
-.featured h4 {
+.featured h3{
   color: var(--color-text-secondary);
+}
+.featured h4 {
+  color: #333;
 }
 
 .latest_posts_wrapper {
@@ -235,8 +237,8 @@ footer .footer_image img {
 }
 footer .copyright {
   text-align: center;
-  color: #f0d9b5;
-  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
   font-weight: 400;
 }
 @media screen and (max-width: 550px) {
