@@ -1,16 +1,22 @@
 import requests
 
-url = "https://lichess.org/api/user/punchthepony"
-headers = {
-    "Accept": "application/json",
-    "User-Agent": "MyWeeklyStatsScript/1.0 (Contact: your-email@example.com)"
-}
+# The Lichess URL for your account
+url = "https://lichess.org/api/user/barry"
 
-response = requests.get(url, headers=headers)
-data = response.json()
+try:
+    response = requests.get(url)
+    data = response.json()
 
-blitz_rating = data['perfs']['blitz']['rating']
-rapid_rating = data['perfs']['rapid']['rating']
+    # Digging into the data safely
+    # This matches the 'perfs' -> 'blitz' -> 'rating' structure
+    blitz = data.get('perfs', {}).get('blitz', {}).get('rating', 'Not Found')
+    rapid = data.get('perfs', {}).get('rapid', {}).get('rating', 'Not Found')
 
-print(blitz_rating)
-print(rapid_rating)
+    print(f"Blitz Rating: {blitz}")
+    print(f"Rapid Rating: {rapid}")
+
+except Exception as e:
+    print(f"Script failed with error: {e}")
+    # This prints the raw data so we can diagnose it if it fails again
+    print("Raw Data Received:")
+    print(response.text)
