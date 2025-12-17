@@ -1,7 +1,7 @@
 import requests
 
 # The Lichess URL for your account
-url = "https://lichess.org/api/user/barry"
+url = "https://lichess.org/api/user/punchthepony"
 
 try:
     response = requests.get(url)
