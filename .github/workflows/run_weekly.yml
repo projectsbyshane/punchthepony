@@ -4,7 +4,8 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "0 0 * * 0"
+    # 21:00 UTC Thursday is 08:00 AM Friday Sydney (AEST/AEDT)
+    - cron: "0 21 * * 4"
   workflow_dispatch:
 
 jobs:
